@@ -30,11 +30,11 @@ You can change it by adding this line with your desired key:
 set -g @sessionx-bind '<mykey>'
 ```
 
-The line above will let you use `<prefix>+<mykey>` to launch
-tmux-sessionx popup, in-case you want to bind only `<mykey>` without the tmux `<prefix>`
-you will have to add an extra line to turn the prefix off.
+### Additional configuration options:
 
 ```bash
+# In-case you want to bind only `<mykey>` without the tmux `<prefix>`
+# you will have to add the following line to turn the prefix off.
 set -g @sessionx-prefix off
 
 ```
