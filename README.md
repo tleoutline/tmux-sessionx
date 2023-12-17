@@ -33,16 +33,11 @@ set -g @sessionx-bind '<mykey>'
 ### Additional configuration options:
 
 ```bash
-# In-case you want to bind only `<mykey>` without the tmux `<prefix>`
+# In case you want to bind only '<mykey>' without the tmux '<prefix>'
 # you will have to add the following line to turn the prefix off.
 set -g @sessionx-prefix off
 
-```
-
-`C-x` is customizeable as well, by default it indexes `$HOME/.config`, but this can be changed by adding this config line:
-
-```bash
-# `C-x` is customizeable, by default it indexes directories in `$HOME/.config`,
+# `C-x` is a customizeable, by default it indexes directories in `$HOME/.config`,
 # but this can be changed by adding the config below.
 # e.g. set -g @sessionx-x-path '~/dotfiles'
 set -g @sessionx-x-path '<some-path>'
@@ -65,10 +60,6 @@ set -g @sessionx-filter-current 'false'
 # Window mode can be turned on so that the default layout
 # Has all the windows listed rather than sessions only
 set -g @sessionx-window-mode 'on'
-
-# Tree mode can be enabled which means that instead of a preview,
-# a hierarchy of sessions and windows will be shown
-set -g @sessionx-tree-mode 'on'
 
 # Preview location and screenspace can be adjusted with these
 # Reminder: it can be toggeled on/off with `?`
@@ -116,6 +107,7 @@ Launching the plugin pops up an fzf-tmux "popup" with fizzy search over existing
 If you insert a non-existing name and hit enter, a new session with that name will be created.
 
 - `alt+backspace` will delete the selected session
+  \<\<\<\<\<\<\< HEAD
 - `Ctrl-u` scroll preview up
 - `Ctrl-d` scroll preview down
 - `Ctrl-n` select preview up
@@ -211,6 +203,25 @@ set -g @sessionx-bind-tmuxinator-list 'alt-t'
 
 - If you're running `fzf` lower than [0.35.0](https://github.com/junegunn/fzf/releases/tag/0.35.0) there are a few missing missing features that might break the plugin. Either consider upgrading or add `@sessionx-legacy-fzf-support 'on'` to your config (see [configuration](#additional-configuration-options))
 - This plugin is not designed to be used outside Tmux, although PRs are happily recieved!
+
+\=======
+
+- `C-u` scroll preview up
+- `C-d` scroll preview down
+- `C-r` will launch a `read` prompt to rename a session within the list
+- `C-w` will reload the list with all the available _windows_ and their preview
+- `C-x` will fuzzy read `~/.config` or a configureable path of your choice (with `@session-x-path`)
+- `C-e` will expand `PWD` and search for local directories to create additional session from
+- `C-b` "back": reloads the first query. Useful when going into window or expand mode, to go back
+- `?` toggles the preview pane
+
+## WARNING ⚠️
+
+This was only tested on one, macOs machine.
+It is also not designed to use outside Tmux and is tailored to fit _my_ needs.
+That said, please feel free to open issues with bugs / additions you'd like to see.
+
+> > > > > > > 39eb6a8 (fixed spelling & formatted README.md using prettier)
 
 ## Thanks ❤️
 
