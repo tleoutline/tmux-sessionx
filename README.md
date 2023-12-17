@@ -30,7 +30,16 @@ You can change it by adding this line with your desired key:
 set -g @sessionx-bind '<mykey>'
 ```
 
-### Additional configuration options:
+The line above will let you use `<prefix>+<mykey>` to launch
+tmux-sessionx popup, in-case you want to bind only `<mykey>` without the tmux `<prefix>`
+you will have to add an extra line to turn the prefix off.
+
+```bash
+set -g @sessionx-prefix off
+
+```
+
+`C-x` is customizeable as well, by default it indexes `$HOME/.config`, but this can be changed by adding this config line:
 
 ```bash
 # `C-x` is customizeable, by default it indexes directories in `$HOME/.config`,
@@ -132,7 +141,7 @@ If you want to change the default key bindings, you can do using this configurat
 # This command is equivalent to the 'Enter' key.
 set -g @sessionx-bind-accept 'alt-j'
 
-# Changing this will interactively accept a session 
+# Changing this will interactively accept a session
 # when there's only one match
 # NOTE! auto-accept will many times prevent from
 # creating new sessions.
