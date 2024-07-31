@@ -51,6 +51,9 @@ set -g @sessionx-custom-paths '/Users/me/projects,/Users/me/second-brain'
 # under the aforementioned custom paths, e.g. /Users/me/projects/tmux-sessionx
 set -g @sessionx-custom-paths-subdirectories 'false'
 
+# Uses `fzf --tmux` instead of the `fzf-tmux` script (requires fzf >= 0.53).
+set -g @sessionx-fzf-builtin-tmux 'on'
+
 # By default, the current session will not be shown on first view
 # This is to support quick switch of sessions
 # Only after other actions (e.g. rename) will the current session appear
