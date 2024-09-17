@@ -33,11 +33,13 @@ set -g @sessionx-bind '<mykey>'
 ### Additional configuration options:
 
 ```bash
-# In case you want to bind only '<mykey>' without the tmux '<prefix>'
-# you will have to add the following line to turn the prefix off.
+# By default, tmux `<prefix>` key needs to pressed before `<mykey>` to launch
+# sessionx. In case you just want to bind '<mykey>' without the tmux '<prefix>'
+# add the following line to turn the prefix off. This option is set to
+# on by defaut.
 set -g @sessionx-prefix off
 
-# `C-x` is a customizeable, by default it indexes directories in `$HOME/.config`,
+# `C-x` is customizeable, by default it indexes directories in `$HOME/.config`,
 # but this can be changed by adding the config below.
 # e.g. set -g @sessionx-x-path '~/dotfiles'
 set -g @sessionx-x-path '<some-path>'
@@ -85,6 +87,11 @@ set -g @sessionx-prompt " "
 # If you want to change the pointer
 set -g @sessionx-pointer "▶ "
 
+# Customize `ls` command to display your directories nicely (default: `ls`)
+# Can be used with `exa`, `lsd`, or other command of your choice to
+# set preview window to match your preference
+set -g @sessionx-ls-command 'lsd --tree --color=always --icon=always'
+
 # When set to 'on' a non-result will be sent to zoxide for path matching
 # Requires zoxide installed
 set -g @sessionx-zoxide-mode 'on'
@@ -102,9 +109,6 @@ set -g @sessionx-legacy-fzf-support 'on'
 # and look for a tmuxinator project with that name.
 # If found, it'll launch the template using tmuxinator
 set -g @sessionx-tmuxinator-mode 'off'
-
-# Turn on fzf-marks (default: off) mode to launch a new session from your marks
-set -g @sessionx-fzf-marks-mode 'off'
 
 # If you want to filter sessions, use a comma separated list of session names
 # e.g. set -g @sessionx-filtered-sessions 'scratch,somesession'
