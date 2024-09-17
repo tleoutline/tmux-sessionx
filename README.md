@@ -123,7 +123,6 @@ Launching the plugin pops up an fzf-tmux "popup" with fizzy search over existing
 If you insert a non-existing name and hit enter, a new session with that name will be created.
 
 - `alt+backspace` will delete the selected session
-  \<\<\<\<\<\<\< HEAD
 - `Ctrl-u` scroll preview up
 - `Ctrl-d` scroll preview down
 - `Ctrl-n` select preview up
@@ -241,25 +240,6 @@ set -g @sessionx-bind-fzf-marks 'alt-g'
 
 - If you're running `fzf` lower than [0.35.0](https://github.com/junegunn/fzf/releases/tag/0.35.0) there are a few missing missing features that might break the plugin. Either consider upgrading or add `@sessionx-legacy-fzf-support 'on'` to your config (see [configuration](#additional-configuration-options))
 - This plugin is not designed to be used outside Tmux, although PRs are happily recieved!
-
-\=======
-
-- `C-u` scroll preview up
-- `C-d` scroll preview down
-- `C-r` will launch a `read` prompt to rename a session within the list
-- `C-w` will reload the list with all the available _windows_ and their preview
-- `C-x` will fuzzy read `~/.config` or a configureable path of your choice (with `@session-x-path`)
-- `C-e` will expand `PWD` and search for local directories to create additional session from
-- `C-b` "back": reloads the first query. Useful when going into window or expand mode, to go back
-- `?` toggles the preview pane
-
-## WARNING ⚠️
-
-This was only tested on one, macOs machine.
-It is also not designed to use outside Tmux and is tailored to fit _my_ needs.
-That said, please feel free to open issues with bugs / additions you'd like to see.
-
-> > > > > > > 39eb6a8 (fixed spelling & formatted README.md using prettier)
 
 ## Thanks ❤️
 
